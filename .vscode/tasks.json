@@ -20,7 +20,7 @@
     {
       "label": "clean local folders",
       "type": "shell",
-      "command": "rm -rf pkg src hackolade_x64* ${workspaceFolderBasename}-*",
+      "command": "rm -rf pkg src ${workspaceFolderBasename}-*",
       "problemMatcher": []
     }
   ]

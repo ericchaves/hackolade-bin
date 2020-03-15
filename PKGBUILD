@@ -15,7 +15,7 @@ options=(!strip)
 noextract=("hackolade_x64_${pkgver}.zip")
  
 source=("hackolade_x64_${pkgver}.zip::https://s3-eu-west-1.amazonaws.com/hackolade/current/Hackolade-linux-x64.zip"
-        "hackolade.desktop")
+        "hackolade.desktop::https://raw.githubusercontent.com/ericchaves/hackolade-bin/master/hackolade.desktop]")
 
 sha256sums=('9f44ec196636147f70055ce88b6add28c77510dfe6630e5040b0a193393a13b5'
             '1d2c2e8b662f4f36bc8fc87c918d422cb1f6096c9929c2691312b5aee3f90f07')
@@ -26,7 +26,7 @@ build(){
 
 package() {
   # some times the source package is compressed with different folder structure
-  # you may need to check the zip file and adjust accordingly in case of errors
+  # check the source zip file and adjust accordingly in case of errors
   _srcdir="${srcdir}/hackolade_x64_${pkgver}/home/eduard/Develop/Hackolade/release/linux-x64/Hackolade-linux-x64"
  
   install -d "${pkgdir}/usr/share/licenses/${_pkgname}"
@@ -40,7 +40,6 @@ package() {
 
   install -m644 "${_srcdir}/License.txt" "${pkgdir}/usr/share/licenses/${_pkgname}/License.txt"
   install -m644 "${_srcdir}/resources/app/icon.png" "${pkgdir}/usr/share/icons/${_pkgname}.png"
-  #install -m644 "${_srcdir}/Hackolade" "${pkgdir}/opt/${_pkgname}/bin/hackolade"
 
   cp -r "${_srcdir}/"* "${pkgdir}/opt/${_pkgname}" -R
 
