@@ -1,0 +1,27 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "install local package",
+      "type": "shell",
+      "command": "makepkg -si",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "uninstall local package",
+      "type": "shell",
+      "command": "yay -Rsc ${workspaceFolderBasename}"
+    },
+    {
+      "label": "clean local folders",
+      "type": "shell",
+      "command": "rm -rf pkg src hackolade_x64* ${workspaceFolderBasename}-*",
+      "problemMatcher": []
+    }
+  ]
+}

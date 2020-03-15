@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=
+Type=Application
+Name=Hackolade
+Comment=Visual Data Modeler  for NoSQL databases
+TryExec=hackolade
+Exec=hackolade %F
+Icon=hackolade
+#MimeType=image/x-foo;
