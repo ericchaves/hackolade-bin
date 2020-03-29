@@ -2,7 +2,7 @@
 
 pkgname=hackolade-bin
 _pkgname=hackolade
-pkgver=3.6.8
+pkgver=3.6.10
 pkgrel=1
 pkgdesc="Hackolade: Visual data modeling tool for NoSQL databases. (UNOFFICIAL)"
 arch=('x86_64')
@@ -17,7 +17,7 @@ noextract=("hackolade_x64_${pkgver}.zip")
 source=("hackolade_x64_${pkgver}.zip::https://s3-eu-west-1.amazonaws.com/hackolade/current/Hackolade-linux-x64.zip"
         "hackolade.desktop::https://raw.githubusercontent.com/ericchaves/hackolade-bin/master/hackolade.desktop]")
 
-sha256sums=('9f44ec196636147f70055ce88b6add28c77510dfe6630e5040b0a193393a13b5'
+sha256sums=('5e8f73337199b2bfdfd4f835da1ea457a791c78986196e577e6954e46fb0bb0a'
             '1d2c2e8b662f4f36bc8fc87c918d422cb1f6096c9929c2691312b5aee3f90f07')
 
 build(){
@@ -27,7 +27,7 @@ build(){
 package() {
   # some times the source package is compressed with different folder structure
   # check the source zip file and adjust accordingly in case of errors
-  _srcdir="${srcdir}/hackolade_x64_${pkgver}/home/eduard/Develop/Hackolade/release/linux-x64/Hackolade-linux-x64"
+  _srcdir="${srcdir}/hackolade_x64_${pkgver}/Hackolade-linux-x64"
  
   install -d "${pkgdir}/usr/share/licenses/${_pkgname}"
   install -d "${pkgdir}/usr/bin"
